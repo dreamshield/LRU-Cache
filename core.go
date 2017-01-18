@@ -22,16 +22,12 @@ var (
 
 // CacheStore is a interface to store cache
 type CacheStore interface {
-	// key is primary key or composite primary key
-	// value is struct's pointer
-	// key format : <tablename>-p-<pk1>-<pk2>...
 	Put(key string, value interface{}) error
 	Get(key string) (interface{}, error)
 	Del(key string) error
 }
 
 // Cacher is an interface to provide cache
-// id format : u-<pk1>-<pk2>...
 type Cacher interface {
 	GetBean(tableName string, sql string) interface{}
 	PutBean(tableName string, sql string, obj interface{})
