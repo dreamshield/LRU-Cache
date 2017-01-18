@@ -29,8 +29,8 @@ type CacheStore interface {
 
 // Cacher is an interface to provide cache
 type Cacher interface {
-	GetBean(tableName string, sql string) interface{}
-	PutBean(tableName string, sql string, obj interface{})
-	DelBean(tableName string, sql string)
-	ClearBeans(tableName string)
+	GetBean(key string) interface{}
+	PutBean(key string, obj interface{})
+	DelBean(key string)
+	ClearBeans()
 }
